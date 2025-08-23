@@ -3,25 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elsa — Portfolio</title>
+  <title>Omar — Portfolio</title>
   <meta name="description" content="Portfolio of Elsa — Architectural Engineering student. Projects, experience, and contact." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0b0d10;
-      --panel: #11151a;
-      --text: #e8eef5;
-      --muted: #b6c2cf;
-      --accent: #7cc4ff;
-      --ring: #2d8cff44;
+      --bg: #e9f0ea; /* light sage green */
+      --panel: #ffffff;
+      --text: #101218;
+      --muted: #4b5a55;
+      --accent: #0a84ff;
+      --ring: #0a84ff33;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
     }
-    @media (prefers-color-scheme: light) {
+    @media (prefers-color-scheme: dark) {
       :root{
-        --bg:#f7f9fc; --panel:#ffffff; --text:#101218; --muted:#556171; --accent:#0a84ff; --ring:#0a84ff33; --shadow:0 8px 24px rgba(16,18,24,.08);
+        --bg:#1f2623; /* dark sage */
+        --panel:#1a201d; --text:#e8eef0; --muted:#a9b7b1; --accent:#7cc4ff; --ring:#7cc4ff33; --shadow:0 8px 24px rgba(0,0,0,.4);
       }
+    }
     }
     * { box-sizing: border-box; }
     html, body { margin:0; padding:0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif; line-height:1.65; }
@@ -74,24 +76,44 @@
   <!-- Top Nav -->
   <div class="nav">
     <div class="nav-inner container">
-      <div class="brand">Elsa</div>
+      <div class="brand">Omar</div>
       <nav aria-label="Primary">
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="index.html">About</a></li>
+          <li class="dropdown" style="position:relative">
+            <a href="#" aria-haspopup="true" aria-expanded="false">More ▾</a>
+            <ul class="dropdown-content" style="display:none; position:absolute; right:0; top:100%; background: var(--panel); border:1px solid color-mix(in srgb, var(--text) 12%, transparent); padding:10px; list-style:none; border-radius:12px; min-width:180px;">
+              <li style="margin:6px 0"><a href="projects.html">Projects</a></li>
+              <li style="margin:6px 0"><a href="volunteering.html">Volunteering</a></li>
+              <li style="margin:6px 0"><a href="contact.html">Contact</a></li>
+            </ul>
+          </li>
           <li><a class="btn" href="resume.pdf" target="_blank" rel="noopener">Résumé</a></li>
         </ul>
       </nav>
+      <script>
+        // Accessible-ish hover/click dropdown
+        (function(){
+          const dd = document.querySelector('.dropdown');
+          if(!dd) return;
+          const btn = dd.querySelector('a');
+          const menu = dd.querySelector('.dropdown-content');
+          let open = false;
+          function set(v){ open = v; menu.style.display = v ? 'block' : 'none'; btn.setAttribute('aria-expanded', v); }
+          dd.addEventListener('mouseenter', ()=>set(true));
+          dd.addEventListener('mouseleave', ()=>set(false));
+          btn.addEventListener('click', (e)=>{ e.preventDefault(); set(!open); });
+          document.addEventListener('click', (e)=>{ if(!dd.contains(e.target)) set(false); });
+        })();
+      </script>
     </div>
   </div>
 
   <!-- Hero -->
   <header class="container hero">
     <div>
-      <span class="badge">Architectural Engineering @ Waterloo</span>
-      <h1>Hi, I’m Elsa — I design and build things that people use.</h1>
+      <span class="badge">Software/Engineering Student</span>
+      <h1>Hi, I’m Omar — I design and build useful things for the web and the real world.</h1>
       <p class="lead">Blending architecture, engineering, and software to make physical and digital experiences clearer, faster, and kinder to the planet.</p>
       <div class="row">
         <a class="btn" href="#projects">See my work</a>
@@ -120,7 +142,7 @@
   <section id="about" class="container section">
     <h2>About</h2>
     <div class="card">
-      <p>First‑year Architectural Engineering student with hands‑on experience at ATA Architects. Comfortable moving between drawings, models, and code. Passionate about climate‑responsive design, clear documentation, and building tools that help teams move faster.</p>
+      <p>About me: software‑minded engineering student who loves clean, practical design. Comfortable moving between code and CAD; focused on shipping fast, readable work with an eye for sustainability and usability.</p>
       <p class="row" style="gap:10px; margin-top:6px">
         <span class="tag">AutoCAD</span>
         <span class="tag">Revit</span>
@@ -227,7 +249,7 @@
   </section>
 
   <footer class="footer">
-    <div class="container">© <span id="y"></span> Elsa. Built with HTML & CSS, deployed on GitHub Pages.</div>
+    <div class="container">© <span id="y"></span> Omar. Built with HTML & CSS, deployed on GitHub Pages.</div>
   </footer>
 
   <script>
