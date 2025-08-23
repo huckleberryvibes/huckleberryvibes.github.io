@@ -79,10 +79,10 @@
       <div class="brand">Omar</div>
       <nav aria-label="Primary">
         <ul>
-          <li><a href="index.html">About</a></li>
           <li class="dropdown" style="position:relative">
             <a href="#" aria-haspopup="true" aria-expanded="false">More ▾</a>
             <ul class="dropdown-content" style="display:none; position:absolute; right:0; top:100%; background: var(--panel); border:1px solid color-mix(in srgb, var(--text) 12%, transparent); padding:10px; list-style:none; border-radius:12px; min-width:180px;">
+              <li><a href="index.html">About</a></li>
               <li style="margin:6px 0"><a href="projects.html">Projects</a></li>
               <li style="margin:6px 0"><a href="volunteering.html">Volunteering</a></li>
               <li style="margin:6px 0"><a href="contact.html">Contact</a></li>
@@ -92,6 +92,8 @@
         </ul>
       </nav>
       <script>
+
+      
         // Accessible-ish hover/click dropdown
         (function(){
           const dd = document.querySelector('.dropdown');
