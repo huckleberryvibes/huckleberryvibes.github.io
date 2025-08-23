@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projects — Omar</title>
+  <link rel="stylesheet" href="styles.css"><!-- optional if you split CSS -->
+</head>
+<body>
+  <div class="nav"><div class="nav-inner container">
+    <div class="brand"><a href="index.html">Omar</a></div>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li class="dropdown"><a href="#">More ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="volunteering.html">Volunteering</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </li>
+        <li><a class="btn" target="_blank" rel="noopener" href="resume.pdf">Résumé</a></li>
+      </ul>
+    </nav>
+  </div></div>
+
+  <main class="container section">
+    <h1>Projects</h1>
+    <div class="grid">
+      <!-- Copy your project cards from index.html or add new ones -->
+    </div>
+  </main>
+
+  <footer class="footer"><div class="container">© <span id="y"></span> Omar.</div></footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script src="dropdown.js"></script>
+</body>
+</html>
